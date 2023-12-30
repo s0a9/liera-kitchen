@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="pt-0 flex justify-around items-center lg:pt-2">
       <div>
-        <img src={Logo} alt="logo" width={60} />
+        <img src={Logo} alt="logo" width={150} />
       </div>
 
       <div className="hidden md:block">
@@ -45,10 +45,10 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className={`${menu ? "inline" : "hidden"} md:hidden relative`}>
+      <div className={`${menu ? "inline" : "hidden"} md:hidden relative z-50`}>
         <div
           className={
-            "absolute gap-1 top-10 -left-10 flex flex-col justify-center items-center align-middle text-lg space-x-3"
+            "absolute top-10 flex flex-col justify-center align-middle text-lg space-y-3 bg-white px-10 py-2 rounded transition-all"
           }
         >
           <NavLink to="/home" className="px-3 py-1 rounded-full">

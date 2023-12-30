@@ -4,27 +4,55 @@
 .bg-img3::before {
   color: white;
   position: absolute;
-  width: 50%;
+  width: 45%;
   padding: 20px;
-  font-size: 18px;
+  font-size: 1.5em;
   background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  bottom: 30px;
-  left: 50px;
+  bottom: 34px;
+  left: 90px;
   border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+
 }
 
 .bg-img0::before {
   content: "Korean delight: Colorful veg, beef, and egg on rice a flavor explosion!";
-}
+  background-image: url("../../Assets/Items/bibimbap-4887417_1280.jpg");
+  background-position: center;
+  box-shadow: inset 10px 10px 80px 1px black;}
 
 .bg-img1::before {
   content: "Iconic American classic: Juicy patty, customizable toppings  pure satisfaction.";
+  background-image: url("./src/Assets/Items/burger-4967868_1280.jpg");
+  background-position: center;
+  box-shadow: inset 10px 10px 80px 1px black;
 }
 
 .bg-img2::before {
   content: "Hungarian warmth in a bowl: Beef, onions, paprika a hearty embrace.";
+  background-image: url("./src/Assets/Items/goulash-soup-3773134_1280.jpg");
+  box-shadow: inset 10px 10px 80px 1px black;
 }
 
 .bg-img3::before {
   content: "India on your plate: A symphony of spices, tandoori, and rich traditions.";
+  background-image: url("./src/Assets/Items/indian-cuisine-8458954_1280.jpg");
+  background-position: right;
+  box-shadow: inset 10px 10px 80px 1px black;
+}
+
+.bg-img0 {
+  background-image: url("../../Assets/Items/bibimbap-4887417_1280.jpg");
+}
+
+.bg-img1 {
+  background-image: url("../../Assets//Items//burger-4967868_1280.jpg");
+  color: black;
+}
+
+.bg-img2 {
+  background-image: url("../../Assets/Items/goulash-soup-3773134_1280.jpg");
+}
+
+.bg-img3 {
+  background-image: url("../../Assets/Items/indian-cuisine-8458954_1280.jpg");
 }
