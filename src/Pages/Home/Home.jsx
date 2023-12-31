@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./home.css";
+import ReviewsSection from "../../Components/Rating";
+import ProductCart from "../../Components/ProductCart";
+import AboutUs from "../../Components/AboutUs";
 
 const Card = ({
   type,
@@ -80,33 +83,53 @@ const Home = () => {
         </button>
       </section>
 
-      <section className="py-10 px-6 md:px-36 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card
-          type="promotion"
-          title="Special Offer"
-          description="Get 20% off on all orders"
-          discount={20}
-        />
-        <Card
-          type="promotion"
-          title="Flash Sale"
-          description="Limited time offer! Buy one get one free"
-          discount={100}
-        />
-
-        <Card
-          type="rating"
-          itemName="Deluxe Pizza"
-          averageRating={4.5}
-          totalReviews={120}
-        />
-        <Card
-          type="rating"
-          itemName="Classic Burger"
-          averageRating={3.8}
-          totalReviews={75}
-        />
+      <section className="pt-20 px-6 md:px-36">
+        <div className="grid grid-cols-1 gap-4 lg:gap-4 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Card
+            type="promotion"
+            title="Special Offer"
+            description="Get 20% off on all orders"
+            discount={20}
+          />
+          <Card
+            type="promotion"
+            title="Flash Sale"
+            description="Limited time offer! Buy one get one free"
+            discount={100}
+          />
+          <Card
+            type="rating"
+            itemName="Deluxe Pizza"
+            averageRating={4.5}
+            totalReviews={120}
+          />
+          <Card
+            type="rating"
+            itemName="Classic Burger"
+            averageRating={3.8}
+            totalReviews={75}
+          />
+        </div>
       </section>
+
+      <section className="flex flex-col items-center justify-center lg:mt-40 lg:mb-5">
+        <h1 className="font-semibold text-4xl text-red-300 mb-5">
+          Our Top Sales
+        </h1>
+        <div className="container">
+          <div className="grid grid-cols-1 gap-4 lg:gap-4 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ProductCart />
+          </div>
+        </div>
+      </section>
+
+      <section className="">
+        <div className="container mx-auto">
+          <ReviewsSection />
+        </div>
+      </section>
+
+      <AboutUs />
     </div>
   );
 };
