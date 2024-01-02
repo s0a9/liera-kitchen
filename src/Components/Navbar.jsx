@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../Assets/brand-logo.png";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CiShoppingCart, CiUser } from "react-icons/ci";
 import { useState } from "react";
+import { useCart } from "../Context/ShoppingCartContext";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
-
   const toggleMenu = () => {
-    menu ? setMenu(false) : setMenu(true);
+    setMenu(!menu);
   };
 
-  console.log(1000);
+  const { state } = useCart();
+
+  const totalQuantity = state.cart.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
 
   return (
     <nav className="pt-0 flex justify-around items-center lg:pt-2">
@@ -21,9 +26,9 @@ const Navbar = () => {
       </div>
 
       <div className="hidden md:block">
-        <ul className={"flex  text-lg space-x-3"}>
+        <ul className={"flex text-lg space-x-3"}>
           <li>
-            <NavLink to="/home" className="px-3 py-1 rounded-full">
+            <NavLink to="/" className="px-3 py-1 rounded-full">
               Home
             </NavLink>
           </li>
@@ -51,7 +56,7 @@ const Navbar = () => {
             "absolute top-10 flex flex-col justify-center align-middle text-lg space-y-3 bg-white px-10 py-2 rounded transition-all"
           }
         >
-          <NavLink to="/home" className="px-3 py-1 rounded-full">
+          <NavLink to="/" className="px-3 py-1 rounded-full">
             Home
           </NavLink>
           <NavLink to="/Order" className="px-3 py-1 rounded-full">
@@ -91,13 +96,15 @@ const Navbar = () => {
           ></div>
         </button>
 
-        <div className="relative">
+        <Link to="Cart" className="relative">
           <CiShoppingCart className="text-3xl" />
-          <p className="absolute text-white flex justify-center align-middle bg-red-400 rounded-[50%] px-1.5 top-[-0.4rem] right-[-0.3rem]">
-            9
+          <p className="absolute text-white flex justify-center align-middle bg-red-400 rounded-full px-1.5 top-[-0.4rem] right-[-0.3rem]">
+            {totalQuantity}
           </p>
-        </div>
-        <CiUser className="text-3xl" />
+        </Link>
+        <button>
+          <CiUser className="text-3xl" />
+        </button>
       </div>
     </nav>
   );

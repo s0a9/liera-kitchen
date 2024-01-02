@@ -1,6 +1,7 @@
 import React from "react";
-import Salmon from "../Assets/Foods/1.jpg";
+import PropTypes from "prop-types";
 import { TopSales } from "./TopSales";
+import { Link } from "react-router-dom";
 
 export const Arrow = () => {
   return (
@@ -42,10 +43,10 @@ const ProductCart = () => {
               <span>${price}</span>
             </p>
 
-            <button className="flex items-center justify-center mx-auto mt-4 font-bold text-center text-red-500 group">
-              Add to Cart
+            <Link to='/Order' className="flex items-center justify-center mx-auto mt-4 font-bold text-center text-red-500 group">
+              Order Now
               <Arrow />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -54,6 +55,10 @@ const ProductCart = () => {
 };
 
 export default ProductCart;
+
+ProductCart.propTypes = {
+  handleCart: PropTypes.func,
+};
 
 //  <div className="w-full">
 //   <div className="p-4 text-center bg-gray-100 rounded shadow">

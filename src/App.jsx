@@ -3,9 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Success from "./Pages/Success/Success";
-import Home from "./Pages/Home/Home";
-import Order from "./Pages/Order/Order";
-import Navbar from "./Components/Navbar";
 import Landing from "./Pages/Landing";
 function App() {
   return (

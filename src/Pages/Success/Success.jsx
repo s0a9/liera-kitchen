@@ -6,7 +6,7 @@ const Success = () => {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
-    navigate("/");
+    navigate("/login");
   };
 
   return (
