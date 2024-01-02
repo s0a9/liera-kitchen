@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 
-const Signup = () => {
+const Signup = ( ) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +25,13 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("userDetails", [email, phone, password]);
+    const userDetails = {
+      email,
+      phone,
+      password,
+    };
+    const userDetailsString = JSON.stringify(userDetails);
+    localStorage.setItem("userDetails", userDetailsString);
   }, [email, password, phone]);
 
   const handleSignup = () => {
